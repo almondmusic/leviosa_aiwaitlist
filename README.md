@@ -17,13 +17,23 @@
 
 ```bash
 npm install
+cp .env.example .env.local   # 환경 변수 설정 (Google Sheets)
 npm run dev
 ```
 
 브라우저에서 [http://localhost:3000](http://localhost:3000) 접속
+
+## 리드 수집 (Google Sheets)
+
+대기 신청 데이터는 Google Sheets에 저장됩니다. 설정 방법은 [GOOGLE_SHEETS_SETUP.md](./GOOGLE_SHEETS_SETUP.md) 참고.
+
+- Vercel 배포 시: Settings → Environment Variables에 동일 변수 등록
+- 컬럼: `created_at` | `email` | `phone` | `user_agent` | `referral_code`
+- 추천인 코드: URL에 `?ref=코드` 포함 시 자동 기록 (예: `/waitlist?ref=PARTNER01`)
 
 ## 기술 스택
 
 - Next.js 14 (App Router)
 - TypeScript
 - Tailwind CSS
+- Google Sheets API (리드 수집)

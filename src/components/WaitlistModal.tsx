@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export type WaitlistFormData = {
   email: string;
@@ -18,22 +19,28 @@ export default function WaitlistModal({
   onClose,
   onSuccess,
 }: WaitlistModalProps) {
+  const searchParams = useSearchParams();
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const referralCode = searchParams.get("ref") ?? "";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
     setIsSubmitting(true);
     try {
-      const body = new FormData();
-      body.append("email", email.trim());
-      body.append("phone", phone.trim());
-      const res = await fetch("/api/waitlist", {
+      const res = await fetch("/api/collect", {
         method: "POST",
-        headers: { "X-Requested-With": "WaitlistModal" },
-        body,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email.trim(),
+          phone: phone.trim(),
+          honeypot,
+          referral_code: referralCode,
+        }),
       });
       if (res.ok) {
         onSuccess?.();
@@ -89,6 +96,17 @@ export default function WaitlistModal({
           <p className="mb-4 text-sm text-neutral-600">
             대기 신청 시 셀러 운영 병목 진단 자료를 바로 보내드립니다.
           </p>
+          {/* Honeypot: 봇이 채우면 제출 무시 (화면에 숨김) */}
+          <input
+            type="text"
+            name="website"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            className="absolute -left-[9999px]"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden
+          />
           <div className="space-y-3">
             <input
               type="email"
@@ -113,6 +131,9 @@ export default function WaitlistModal({
           >
             {isSubmitting ? "제출 중…" : "대기 신청하기"}
           </button>
+          <p className="mt-3 text-center text-xs text-neutral-500">
+            대기 신청 시 알림(이메일/문자) 수신에 동의한 것으로 간주됩니다.
+          </p>
         </form>
       </div>
     </div>

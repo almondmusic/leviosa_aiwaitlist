@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
+import React, { createContext, Suspense, useCallback, useContext, useEffect, useState } from "react";
 import WaitlistModal from "./WaitlistModal";
 
 type WaitlistModalContextType = {
@@ -50,11 +50,13 @@ export default function WaitlistModalProvider({
   return (
     <WaitlistModalContext.Provider value={{ openModal, closeModal }}>
       {children}
-      <WaitlistModal
-        isOpen={open}
-        onClose={closeModal}
-        onSuccess={handleSuccess}
-      />
+      <Suspense fallback={null}>
+        <WaitlistModal
+          isOpen={open}
+          onClose={closeModal}
+          onSuccess={handleSuccess}
+        />
+      </Suspense>
       {successToast && (
         <div
           role="alert"
