@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --top-nav-height: 50px;
+  --md-top-nav-height: 60px;
+  /* 헤더 + 탭바 높이만큼 스크롤 앵커 여백 */
+  --scroll-margin-top: 120px;
+}
+
+/* 탭 앵커 스크롤 시 상단 고정 영역에 가리지 않도록 */
+#success-area {
+  scroll-margin-top: var(--scroll-margin-top);
+}
+
+/* 제목이 탭에 붙어 보이도록 여백 최소화 */
+#intro-area {
+  scroll-margin-top: 98px;
+}
+@media (min-width: 768px) {
+  #intro-area {
+    scroll-margin-top: 116px;
+  }
+}
+
+#faq-area {
+  scroll-margin-top: 100px;
+}
+@media (min-width: 768px) {
+  #faq-area {
+    scroll-margin-top: 120px;
+  }
+}
+
+body {
+  font-family: var(--font-pretendard), -apple-system, BlinkMacSystemFont,
+    system-ui, sans-serif;
+}
+
+/* Scroll indicator animation */
+.scroll-downs {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 34px;
+  height: 55px;
+}
+
+.mousey {
+  width: 3px;
+  padding: 10px 15px;
+  height: 35px;
+  border: 2px solid white;
+  border-radius: 25px;
+  opacity: 0.75;
+}
+
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: white;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+  animation-iteration-count: infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
