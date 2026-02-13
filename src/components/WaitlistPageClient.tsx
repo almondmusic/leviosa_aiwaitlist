@@ -55,7 +55,8 @@ export default function WaitlistPageClient({ params }: { params: Params }) {
         <section className="bg-black py-10">
           <div className="mx-auto max-w-6xl px-4 text-center">
             <p className="text-base font-medium text-white/85 md:text-lg">
-              상품 등록, 가격/재고, 주문/배송, CS… 매출이 커질수록 사람 손이 병목이 됩니다.
+              상품 등록, 가격/재고, 주문/배송, CS… 매출이 커질수록 사람 손이
+              병목이 됩니다.
               <br />
               <span className="font-semibold text-white">
                 레비오사 AI는 반복 업무를 &quot;구조적으로&quot; 자동화합니다.
@@ -217,20 +218,22 @@ export default function WaitlistPageClient({ params }: { params: Params }) {
               </div>
               <div className="mt-6 space-y-4 text-base leading-relaxed text-neutral-700 md:text-lg md:leading-loose">
                 <p className="break-keep">
-                  주하담은 개발자로 커리어를 쌓으며, 동시에 셀러로 직접 부딪혔습니다.
-                  2024년 12월에는 월매출 1억을 달성했지만, &quot;사람이 갈아 넣는
-                  운영&quot;은 매출이 커질수록 더 위험해졌습니다.
+                  주하담은 개발자로 커리어를 쌓으며, 동시에 셀러로 직접
+                  부딪혔습니다. 2024년 12월에는 월매출 1억을 달성했지만,
+                  &quot;사람이 갈아 넣는 운영&quot;은 매출이 커질수록 더
+                  위험해졌습니다.
                 </p>
                 <div className="flex gap-3">
                   <div className="w-[3px] bg-neutral-900" />
                   <p className="break-keep font-bold">
-                    그때 결론은 하나였습니다. &quot;운영을 시스템으로 바꿔야 한다.&quot;
+                    그때 결론은 하나였습니다. &quot;운영을 시스템으로 바꿔야
+                    한다.&quot;
                   </p>
                 </div>
                 <p className="break-keep">
                   레비오사 AI는 &quot;셀러들이 매일 반복하는 운영 업무&quot;를
-                  자동화해, 실수/누락/병목을 줄이고, 확장 가능한 구조로 전환시키는
-                  제품입니다.
+                  자동화해, 실수/누락/병목을 줄이고, 확장 가능한 구조로
+                  전환시키는 제품입니다.
                 </p>
                 <ul className="rounded-2xl bg-yellow-50 p-5 text-sm font-semibold text-neutral-900 md:text-base">
                   <li>· 실사용자 문제에서 출발 (셀러 본인 운영 경험)</li>
@@ -298,7 +301,9 @@ export default function WaitlistPageClient({ params }: { params: Params }) {
                 </div>
               )}
               <div className="text-center">
-                <div className="text-xl font-extrabold">레비오사 AI 대기 신청</div>
+                <div className="text-xl font-extrabold">
+                  레비오사 AI 대기 신청
+                </div>
                 <div className="mt-2 text-sm text-neutral-600">
                   이메일과 연락처만 입력하면 됩니다.
                 </div>
