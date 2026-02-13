@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { formatPhoneInput, validatePhone } from "@/lib/phone";
 
 export type WaitlistFormData = {
   email: string;
@@ -30,6 +31,10 @@ export default function WaitlistModal({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
+    if (phone.trim() && !validatePhone(phone)) {
+      alert("연락처는 010-XXXX-XXXX 형식으로 입력해 주세요.");
+      return;
+    }
     setIsSubmitting(true);
     try {
       const res = await fetch("/api/collect", {
@@ -118,9 +123,10 @@ export default function WaitlistModal({
             />
             <input
               type="tel"
-              placeholder="연락처(선택)"
+              placeholder="010-XXXX-XXXX (선택)"
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={(e) => setPhone(formatPhoneInput(e.target.value))}
+              maxLength={13}
               className="w-full rounded-xl border border-neutral-200 px-4 py-3 text-sm outline-none focus:border-red-500"
             />
           </div>

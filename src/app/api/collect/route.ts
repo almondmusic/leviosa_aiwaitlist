@@ -1,5 +1,6 @@
 import { google } from "googleapis";
 import { NextRequest, NextResponse } from "next/server";
+import { validatePhone, normalizePhoneForStorage } from "@/lib/phone";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -27,6 +28,15 @@ export async function POST(req: NextRequest) {
         { status: 400 },
       );
     }
+
+    const rawPhone = typeof phone === "string" ? phone.trim() : "";
+    if (rawPhone && !validatePhone(rawPhone)) {
+      return NextResponse.json(
+        { error: "연락처는 010-XXXX-XXXX 형식으로 입력해 주세요." },
+        { status: 400 },
+      );
+    }
+    const normalizedPhone = rawPhone ? normalizePhoneForStorage(rawPhone) : "";
 
     const sheetId = process.env.GOOGLE_SHEET_ID;
     if (!sheetId) {
@@ -99,7 +109,7 @@ export async function POST(req: NextRequest) {
           [
             new Date().toISOString(),
             trimmedEmail,
-            typeof phone === "string" ? phone.trim() : "",
+            normalizedPhone,
             req.headers.get("user-agent") ?? "",
             typeof referral_code === "string" ? referral_code.trim() : "",
           ],

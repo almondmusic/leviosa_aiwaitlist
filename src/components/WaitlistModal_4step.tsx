@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { formatPhoneInput, validatePhone } from "@/lib/phone";
 
 const OCCUPATIONS = [
   "회사원",
@@ -157,6 +158,10 @@ export default function WaitlistModal({
     formData.timeSlots.length >= 2;
 
   const handleSubmit = async () => {
+    if (formData.phone.trim() && !validatePhone(formData.phone)) {
+      alert("연락처는 010-XXXX-XXXX 형식으로 입력해 주세요.");
+      return;
+    }
     setIsSubmitting(true);
     try {
       const body = new FormData();
@@ -315,9 +320,10 @@ export default function WaitlistModal({
                 />
                 <input
                   type="tel"
-                  placeholder="연락처(선택)"
+                  placeholder="010-XXXX-XXXX (선택)"
                   value={formData.phone}
-                  onChange={(e) => update("phone", e.target.value)}
+                  onChange={(e) => update("phone", formatPhoneInput(e.target.value))}
+                  maxLength={13}
                   className="w-full rounded-xl border border-neutral-200 px-4 py-3 text-sm outline-none focus:border-red-500"
                 />
               </div>
