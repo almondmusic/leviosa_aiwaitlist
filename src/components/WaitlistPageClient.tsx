@@ -51,6 +51,32 @@ export default function WaitlistPageClient({ params }: { params: Params }) {
           leadLines={["레비오사 AI 창업자 주하담"]}
         />
 
+        {/* Proof strip - 최상단 가치 증거 (추후 후기/실적 추가) */}
+        <section className="bg-white">
+          <div className="mx-auto max-w-6xl px-4 py-6">
+            <div className="grid gap-3 rounded-2xl border border-neutral-200 bg-neutral-50 p-4 md:grid-cols-3 md:p-5">
+              <div className="text-sm font-semibold text-neutral-900">
+                창업자 직접 운영 경험
+                <div className="mt-1 text-xs font-medium text-neutral-600">
+                  월매출 1억 스마트스토어 운영에서 검증한 병목·자동화
+                </div>
+              </div>
+              <div className="text-sm font-semibold text-neutral-900">
+                풀스택 기반 실제 구현
+                <div className="mt-1 text-xs font-medium text-neutral-600">
+                  문장 생성이 아닌, 등록·가격·주문·CS까지 한 흐름 자동화
+                </div>
+              </div>
+              {/* <div className="text-sm font-semibold text-neutral-900">
+                추후 체험 후기 추가 예정
+                <div className="mt-1 text-xs font-medium text-neutral-600">
+                  베타 무료 체험 후 실제 사용자 후기를 여기에 반영합니다
+                </div>
+              </div> */}
+            </div>
+          </div>
+        </section>
+
         {/* CTA below hero */}
         <section className="bg-black py-10">
           <div className="mx-auto max-w-6xl px-4 text-center">
@@ -244,6 +270,73 @@ export default function WaitlistPageClient({ params }: { params: Params }) {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 레비오사 AI란? - 기능·차별점 */}
+        <section className="bg-white">
+          <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-2xl font-extrabold md:text-3xl">
+                레비오사 AI는 뭔가요?
+              </h2>
+              <p className="mt-4 break-keep text-base leading-relaxed text-neutral-600 md:text-lg">
+                &quot;AI 글쓰기 툴&quot;이 아니라, 스마트스토어 운영에 바로 쓰는
+                실무 자동화 시스템입니다.
+              </p>
+            </div>
+            <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-neutral-50 p-5 text-left">
+              <div className="text-sm font-extrabold text-neutral-900">
+                일반 AI 툴과의 차이
+              </div>
+              <div className="mt-2 break-keep text-sm leading-relaxed text-neutral-600">
+                일반 AI는 문장/이미지 생성에서 끝나고, 실제 마켓 운영은 여전히
+                수동입니다. 레비오사 AI는 상품 검색·상품명 최적화·상세페이지
+                생성부터, 최저가 업데이트·주문 자동처리·고객문의 자동응답까지
+                워크플로우로 묶어 자동 실행되게 설계했습니다.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 유료 전환 시 혜택 - 구체적 명시 */}
+        <section className="bg-neutral-50">
+          <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-2xl font-extrabold md:text-3xl">
+                유료로 전환하면 받는 혜택(예정)
+              </h2>
+              <p className="mt-4 break-keep text-sm leading-relaxed text-neutral-600">
+                가격/플랜은 베타 피드백 후 확정되며, 대기자 분에게는 할인권
+                쿠폰이 제공됩니다.
+              </p>
+            </div>
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  title: "상품·등록 자동화",
+                  desc: "대량 등록/수정, 상품명 최적화, 상세페이지 생성 보조로 등록 속도와 품질을 끌어올립니다.",
+                },
+                {
+                  title: "가격·재고 자동 방어",
+                  desc: "최저가 업데이트, 품절/재입고 동기화, 실수 방지 룰로 클레임·제재 위험을 줄입니다.",
+                },
+                {
+                  title: "주문·CS 자동 흐름",
+                  desc: "주문 자동처리, 고객문의 자동응답, 누락 방지·알림으로 병목을 줄이고 신뢰를 지킵니다.",
+                },
+              ].map((x) => (
+                <div
+                  key={x.title}
+                  className="rounded-2xl border border-neutral-200 bg-white p-6"
+                >
+                  <div className="text-base font-bold">{x.title}</div>
+                  <div className="mt-2 break-keep text-sm leading-relaxed text-neutral-600">
+                    {x.desc}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

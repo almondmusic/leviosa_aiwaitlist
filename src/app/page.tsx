@@ -46,6 +46,22 @@ export default function Home() {
             </h3>
             <div className="mt-6 space-y-5 text-[16px] leading-[1.9] text-gray-800 md:text-[18px]">
               <p>2020년, 나의 연봉은 3,000만 원이었다.</p>
+              <div className="my-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm">
+                  <img
+                    src="/class101_3000_offer.png"
+                    alt="클래스101 오퍼레터 - 연봉 3,000만 원"
+                    className="h-auto w-full object-contain"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm">
+                  <img
+                    src="/class101_offerletter.png"
+                    alt="클래스101 입사 제안 메일"
+                    className="h-auto w-full object-contain"
+                  />
+                </div>
+              </div>
               <p>
                 개발자로 첫 커리어를 시작했고,
                 <br />
@@ -100,6 +116,11 @@ export default function Home() {
               <p className="font-semibold text-[#EF5555]">
                 결과는 1억 원이 넘는 빚.
               </p>
+              <img
+                src="/2022_debt_100k.jpeg"
+                alt="1억 원이 넘는 빚 증명"
+                className="mt-2 max-w-[320px] rounded-lg border border-gray-200 opacity-90"
+              />
               <p>그때 처음으로 깨달았다.</p>
               <p className="rounded-lg border-l-4 border-[#EF5555] bg-gray-50 px-4 py-3 font-medium">
                 열심히 일한 돈은 느리지만 단단했고,
@@ -197,6 +218,31 @@ export default function Home() {
                 <li>주문 처리 누락 감소</li>
                 <li>그리고 월매출 1억 돌파</li>
               </ul>
+
+              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm">
+                  <img
+                    src="/coupang_rocketgroth.png"
+                    alt="쿠팡 로켓그로스 매출 실적"
+                    className="h-auto w-full object-contain"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm">
+                  <img
+                    src="/cafe24_2412_revenue.png"
+                    alt="카페24 스토어 매출 실적"
+                    className="h-auto w-full object-contain"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm">
+                  <img
+                    src="/smartstore_revenue.png"
+                    alt="스마트스토어 매출 실적"
+                    className="h-auto w-full object-contain"
+                  />
+                </div>
+              </div>
+
               <p>이건 재능의 결과가 아니었다.</p>
               <p>운의 결과도 아니었다.</p>
               <p className="text-[18px] font-bold text-[#EF5555] md:text-[20px]">
@@ -288,6 +334,11 @@ export default function Home() {
                 90%의 실패와 10%의 성공, 그 허상을 깨다
               </h3>
               <hr />
+              <img
+                src="/90percent_fail.png"
+                alt="90% 실패 증거 - 사업자 수·매출 평균 추이"
+                className="mt-6 w-full max-w-[600px] rounded-lg border border-gray-200 shadow-sm"
+              />
             </div>
             <div className="mt-8 space-y-6 text-[16px] leading-[1.9] text-gray-800 md:text-[18px]">
               <p>
