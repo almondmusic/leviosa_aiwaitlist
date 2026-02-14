@@ -41,7 +41,7 @@ export default function Home() {
             <p className="mb-6 text-center text-[18px] font-bold text-gray-900 md:text-[22px]">
               퍼스트 클래스로 두바이 가는 동안,
               <br className="sm:hidden" />
-              스마트스토어 하루 매출 1,000만 원.
+              하루 매출 1,000만 원.
             </p>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-md">
@@ -55,6 +55,25 @@ export default function Home() {
                 <img
                   src="/smartstore_1day_revenue.png"
                   alt="스마트스토어 일매출 1000만원 초과 입금 증거"
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+            </div>
+            <p className="mt-8 text-center text-[15px] font-semibold text-gray-700">
+              2025년에도 2023년과 동일하게 성공 가능하다.
+            </p>
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-md">
+                <img
+                  src="/2023_my_first_start.png"
+                  alt="2023년 스마트스토어 매출증빙"
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-md">
+                <img
+                  src="/2025_new_smartstore_revenue.png"
+                  alt="2025년 스마트스토어 정산 3292만원"
                   className="h-auto w-full object-contain"
                 />
               </div>
