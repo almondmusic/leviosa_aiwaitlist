@@ -35,6 +35,46 @@ export default function Home() {
           />
         </div>
 
+        {/* 0.5) 후킹 — 스마트스토어 매출·퍼스트클래스 증명 */}
+        <section className="border-y border-gray-200 bg-white py-10 md:py-14">
+          <div className="mx-auto max-w-[900px] px-4">
+            <p className="mb-6 text-center text-[18px] font-bold text-gray-900 md:text-[22px]">
+              퍼스트 클래스로 두바이 가는 동안,
+              <br className="sm:hidden" />
+              스마트스토어 하루 매출 1,000만 원.
+            </p>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-md">
+                <img
+                  src="/firstclass_message.png"
+                  alt="두바이 퍼스트클래스 여행 + 일매출 1000만원 달성"
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-md">
+                <img
+                  src="/smartstore_1day_revenue.png"
+                  alt="스마트스토어 일매출 1000만원 초과 입금 증거"
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+            </div>
+            <p className="mt-6 text-center text-[15px] font-medium text-gray-600">
+              이게 어떻게 가능했는지, 아래에서 이야기한다.
+            </p>
+            <p className="mt-3 text-center">
+              <a
+                href="https://blog.naver.com/leviosa_ai/223984223453"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[14px] font-medium text-[#EF5555] underline decoration-[#EF5555]/60 underline-offset-2 hover:text-[#EF5555]/90"
+              >
+                블로그에서 원문 확인 →
+              </a>
+            </p>
+          </div>
+        </section>
+
         {/* 1) 내 이야기(신뢰용 배경) — "왜 이 문제를 파고들었는가" */}
         <section className="bg-white">
           <div className="mx-auto max-w-[720px] px-4 py-12 md:py-16">
