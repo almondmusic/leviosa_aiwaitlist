@@ -14,6 +14,7 @@ export default function Home() {
         {/* 0) 상단 히어로(제목+리드) */}
         <div id="success-area">
           <HeroBanner
+            topLead="이것은 서울대 출신 개발자가 빚 1억을 갚기 위해 연봉 1억, 자유를 찾기 위해 매출 1억을 달성해나간 이야기입니다."
             titleLines={[
               "매출이 오를수록 더 바빠지는 셀러,",
               "그건 성장이 아니라 '병목'입니다",
