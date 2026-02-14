@@ -58,21 +58,23 @@ export default function HeroBanner({
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
-      <div className="relative z-10 mx-auto flex h-full min-h-[320px] max-w-5xl flex-col justify-center gap-6 px-4 py-12 md:min-h-[480px] md:gap-8 md:px-8 md:py-16">
-        {topLead && (
-          <p className="text-left text-[14px] font-semibold text-[#EF5555] md:text-[15px]">
-            {topLead}
-          </p>
-        )}
-        {/* 제목 (강조색) */}
-        <h2 className="text-left text-[26px] font-bold leading-[1.35] text-white md:text-[44px] lg:text-[50px]">
-          {titleLines.map((line, i) => (
-            <span key={i}>
-              {line}
-              {i < titleLines.length - 1 && <br />}
-            </span>
-          ))}
-        </h2>
+      <div className="relative z-10 mx-auto flex h-full min-h-[320px] max-w-5xl flex-col justify-center gap-4 px-4 py-8 md:min-h-[480px] md:gap-5 md:px-8 md:py-10">
+        <div className="space-y-2">
+          {topLead && (
+            <p className="text-left text-[14px] font-semibold text-[#EF5555] md:text-[15px]">
+              {topLead}
+            </p>
+          )}
+          {/* 제목 (강조색) */}
+          <h2 className="text-left text-[26px] font-bold leading-[1.35] text-white md:text-[44px] lg:text-[50px]">
+            {titleLines.map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < titleLines.length - 1 && <br />}
+              </span>
+            ))}
+          </h2>
+        </div>
 
         {/* 리드 문단 */}
         {leadLines.length > 0 && (
@@ -84,7 +86,7 @@ export default function HeroBanner({
         )}
 
         {/* 이미지 2장 영역 */}
-        <div className="grid w-full grid-cols-2 gap-4 pt-2 md:gap-6 md:pt-4">
+        <div className="grid w-full grid-cols-2 gap-4 md:gap-6">
           <div className="relative aspect-[4/3] overflow-hidden md:aspect-[16/10]">
             <HeroImage
               src={image1Src}
