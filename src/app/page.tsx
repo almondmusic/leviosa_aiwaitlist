@@ -476,8 +476,8 @@ export default function Home() {
               <p className="font-semibold">기초가 얕으면 높이는 제한된다.</p>
               <p className="font-medium">예를 들어 이런 기초들이다.</p>
               {/* 5가지 예시 + 이미지 (기초 판자처럼 이미지 주위에 5가지 배치) */}
-              <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-8">
-                <ul className="flex-1 space-y-2 text-[15px] md:text-[16px]">
+              <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-6">
+                <ul className="min-w-0 space-y-2 text-[15px] md:flex-1 md:text-[16px]">
                   <li className="flex items-center gap-2">
                     <span className="inline-block h-2 w-2 shrink-0 rounded-full bg-[#EF5555]" />
                     상품 등록 속도
@@ -499,25 +499,55 @@ export default function Home() {
                     플랫폼별 정책/제재 리스크
                   </li>
                 </ul>
-                <div className="relative mx-auto w-[200px] shrink-0 md:mx-0 md:w-[220px]">
+                <div className="relative mx-auto w-full max-w-[180px] md:mx-0 md:max-w-[200px]">
                   <img
                     src="/building_design.jpg"
                     alt="건물 기초 설계"
-                    className="w-full rounded-lg border border-neutral-200 shadow-md"
+                    className="w-full rounded-lg border border-neutral-200 object-cover opacity-80 shadow-md"
                   />
-                  <span className="absolute -top-1 left-0 right-0 text-center text-[11px] font-semibold text-[#EF5555] md:text-xs">
+                  <span
+                    className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-center text-[11px] font-bold md:text-[12px]"
+                    style={{
+                      color: "#EF5555",
+                      textShadow: "0 0 4px white, 0 1px 3px black",
+                    }}
+                  >
                     상품 등록 속도
                   </span>
-                  <span className="absolute top-1/2 -right-8 max-w-[72px] text-right text-[10px] font-semibold text-neutral-600 md:-right-10 md:text-[11px]">
+                  <span
+                    className="absolute right-1 top-[15%] -translate-y-1/2 whitespace-nowrap text-right text-[11px] font-bold md:text-[12px]"
+                    style={{
+                      color: "#374151",
+                      textShadow: "0 0 4px white, 0 1px 3px black",
+                    }}
+                  >
                     가격/재고 싱크
                   </span>
-                  <span className="absolute -bottom-1 left-0 right-0 text-center text-[10px] font-semibold text-neutral-600 md:text-[11px]">
+                  <span
+                    className="absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-center text-[11px] font-bold md:text-[12px]"
+                    style={{
+                      color: "#374151",
+                      textShadow: "0 0 4px white, 0 1px 3px black",
+                    }}
+                  >
                     주문 처리 누락률
                   </span>
-                  <span className="absolute bottom-1/3 -left-7 max-w-[56px] text-[10px] font-semibold text-neutral-600 md:-left-8 md:text-[11px]">
+                  <span
+                    className="absolute left-1 top-[62%] -translate-y-1/2 whitespace-nowrap text-[11px] font-bold md:text-[12px]"
+                    style={{
+                      color: "#374151",
+                      textShadow: "0 0 4px white, 0 1px 3px black",
+                    }}
+                  >
                     CS 응답 속도
                   </span>
-                  <span className="absolute right-0 bottom-2 -right-6 max-w-[64px] text-right text-[10px] font-semibold text-neutral-600 md:-right-8 md:text-[11px]">
+                  <span
+                    className="absolute bottom-0 right-1 translate-y-1/2 whitespace-nowrap text-right text-[11px] font-bold md:text-[12px]"
+                    style={{
+                      color: "#374151",
+                      textShadow: "0 0 4px white, 0 1px 3px black",
+                    }}
+                  >
                     정책/제재 리스크
                   </span>
                 </div>

@@ -26,9 +26,9 @@ export default function CTAButton({
       ? "bg-[#EF5555] hover:bg-[#EF5555]/90"
       : "bg-[#EF5555] px-6 font-semibold text-white md:px-8";
   const sizeClass = {
-    md: "h-10 min-w-[100px] px-4 text-sm md:h-11 md:min-w-[120px] md:px-5 md:text-base",
-    lg: "h-[58px] w-[300px] text-[20px]",
-    xl: "h-[58px] w-[300px] text-[22px] md:w-[430px] md:py-4 md:text-2xl",
+    md: "h-10 min-w-[100px] px-4 text-sm md:h-11 md:min-w-[120px] md:px-5 md:text-base text-[14px]",
+    lg: "h-[58px] w-[300px] text-[18px]",
+    xl: "h-[58px] w-[300px] text-[21px] md:w-[430px] md:py-4 md:text-2xl",
   };
 
   return (
