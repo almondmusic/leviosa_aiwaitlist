@@ -89,6 +89,7 @@ export function WaitlistModal() {
           phone: phone.trim(),
           honeypot,
           referral_code: referralCode,
+          variant: "b",
         }),
       })
 

@@ -50,7 +50,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
+          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground" onClick={open}>
             {"로그인"}
           </Button>
           <Button
@@ -85,7 +85,7 @@ export function Header() {
               </a>
             ))}
             <div className="mt-3 flex flex-col gap-2 border-t border-border/50 pt-3">
-              <Button variant="ghost" size="sm" className="justify-start text-muted-foreground">
+              <Button variant="ghost" size="sm" className="justify-start text-muted-foreground" onClick={() => { setMobileOpen(false); open() }}>
                 {"로그인"}
               </Button>
               <Button

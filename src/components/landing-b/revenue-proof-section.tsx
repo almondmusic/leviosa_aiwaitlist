@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { TrendingUp, Plane, Clock, Package, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useWaitlist } from "./waitlist-context"
 
 const stats = [
   { label: "월 매출", value: "1억+", suffix: "원 달성", icon: TrendingUp },
@@ -108,6 +109,7 @@ function AnimatedCounter({
 
 export function RevenueProofSection() {
   const { ref: sectionRef, inView } = useInView(0.08)
+  const { open } = useWaitlist()
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden py-24 lg:py-32">
@@ -295,12 +297,10 @@ export function RevenueProofSection() {
             </p>
             <Button
               className="mt-8 bg-gradient-to-r from-amber-400 to-orange-500 px-8 text-sm font-semibold text-[#120e1e] shadow-lg shadow-amber-500/20 transition-all hover:shadow-amber-500/30"
-              asChild
+              onClick={open}
             >
-              <a href="#pricing">
-                {"지금 시작하기"}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
+              {"지금 시작하기"}
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>

@@ -54,6 +54,7 @@ export function CtaSection() {
           <Button
             size="lg"
             className="bg-gradient-to-r from-amber-400 to-orange-500 px-8 text-white shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all"
+            onClick={open}
           >
             무료 진단 받기
             <ArrowRight className="ml-2 h-4 w-4" />

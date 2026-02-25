@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { useWaitlist } from "./waitlist-context";
 
 const plans = [
   {
@@ -79,6 +80,7 @@ function useInView(threshold = 0.15) {
 
 export function PricingSection() {
   const { ref: sectionRef, inView } = useInView(0.1);
+  const { open } = useWaitlist();
 
   return (
     <section id="pricing" ref={sectionRef} className="relative py-24 lg:py-32">
@@ -149,6 +151,7 @@ export function PricingSection() {
                     ? "bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-md shadow-violet-500/20 hover:shadow-violet-500/30 hover:from-violet-700 hover:to-purple-700"
                     : "bg-muted text-foreground border border-border hover:bg-muted/80"
                 }`}
+                onClick={open}
               >
                 {plan.cta}
               </Button>

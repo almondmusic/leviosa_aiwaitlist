@@ -45,6 +45,7 @@ export default function WaitlistModal({
           phone: phone.trim(),
           honeypot,
           referral_code: referralCode,
+          variant: "a",
         }),
       });
       if (res.ok) {

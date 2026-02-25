@@ -4,10 +4,15 @@ import { validatePhone, normalizePhoneForStorage } from "@/lib/phone";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+/** 스프레드시트 셀에 넣을 때 줄바꿈(\n, \r) 제거 — 한 행이 여러 줄로 쪼개지는 것 방지 */
+function sanitizeForSheet(value: string): string {
+  return value.replace(/[\r\n]+/g, " ").trim();
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { email, phone = "", honeypot, referral_code = "" } = body;
+    const { email, phone = "", honeypot, referral_code = "", variant = "" } = body;
 
     // Honeypot: 봇이 채우면 거부
     if (honeypot) {
@@ -95,14 +100,33 @@ export async function POST(req: NextRequest) {
     });
     const firstSheetTitle =
       meta.data.sheets?.[0]?.properties?.title ?? "Sheet1";
-    const range =
+    const sheetRef =
       /^[A-Za-z0-9_]+$/.test(firstSheetTitle)
-        ? `${firstSheetTitle}!A:E`
-        : `'${firstSheetTitle.replace(/'/g, "''")}'!A:E`;
+        ? firstSheetTitle
+        : `'${firstSheetTitle.replace(/'/g, "''")}'`;
 
-    await sheets.spreadsheets.values.append({
+    const sourceVariant =
+      typeof variant === "string" && (variant === "a" || variant === "b")
+        ? variant
+        : "";
+
+    const userAgent = sanitizeForSheet(req.headers.get("user-agent") ?? "");
+    const referral = sanitizeForSheet(
+      typeof referral_code === "string" ? referral_code.trim() : "",
+    );
+
+    // A열부터 확실히 채우기: 다음 빈 행 번호를 구한 뒤 해당 행 A:F에 update
+    const existing = await sheets.spreadsheets.values.get({
       spreadsheetId: sheetId,
-      range,
+      range: `${sheetRef}!A:A`,
+    });
+    const rows = existing.data.values ?? [];
+    const nextRow = rows.length + 1;
+    const updateRange = `${sheetRef}!A${nextRow}:F${nextRow}`;
+
+    await sheets.spreadsheets.values.update({
+      spreadsheetId: sheetId,
+      range: updateRange,
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [
@@ -110,8 +134,9 @@ export async function POST(req: NextRequest) {
             new Date().toISOString(),
             trimmedEmail,
             normalizedPhone,
-            req.headers.get("user-agent") ?? "",
-            typeof referral_code === "string" ? referral_code.trim() : "",
+            userAgent,
+            referral,
+            sourceVariant,
           ],
         ],
       },

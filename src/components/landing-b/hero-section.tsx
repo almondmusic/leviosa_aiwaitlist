@@ -80,6 +80,7 @@ export function HeroSection() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-violet-600 to-purple-600 px-8 text-white shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:from-violet-700 hover:to-purple-700 transition-all"
+              onClick={open}
             >
               {"무료 진단 받기"}
               <ArrowRight className="ml-2 h-4 w-4" />
