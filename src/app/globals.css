@@ -7,6 +7,26 @@
   --md-top-nav-height: 60px;
   /* 헤더 + 탭바 높이만큼 스크롤 앵커 여백 */
   --scroll-margin-top: 120px;
+  /* B 사이트용 폴백 (A에서는 이 값 사용) */
+  --background: #fafafa;
+  --foreground: #171717;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #6366f1;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --popover: #ffffff;
+  --popover-foreground: #171717;
 }
 
 /* 탭 앵커 스크롤 시 상단 고정 영역에 가리지 않도록 */

@@ -1,0 +1,23 @@
+/* B 사이트(ver-1) 전용 테마 변수 — /b 레이아웃에서만 로드됨 */
+:root {
+  --background: oklch(0.975 0.008 75);
+  --foreground: oklch(0.13 0.03 290);
+  --card: oklch(0.99 0.005 75);
+  --card-foreground: oklch(0.13 0.03 290);
+  --popover: oklch(0.99 0.005 75);
+  --popover-foreground: oklch(0.13 0.03 290);
+  --primary: oklch(0.50 0.22 285);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0.008 75);
+  --secondary-foreground: oklch(0.18 0.04 290);
+  --muted: oklch(0.95 0.008 75);
+  --muted-foreground: oklch(0.45 0.02 280);
+  --accent: oklch(0.72 0.19 55);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.91 0.008 75);
+  --input: oklch(0.91 0.008 75);
+  --ring: oklch(0.50 0.18 285);
+  --radius: 0.75rem;
+}
