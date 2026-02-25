@@ -101,7 +101,7 @@ export function HeroSection() {
             }`}
           >
             <div className="text-center">
-              <p className="text-2xl font-bold text-foreground">{"1,200+"}</p>
+              <p className="text-2xl font-bold text-foreground">{"100+"}</p>
               <p className="mt-1 text-xs text-muted-foreground">
                 {"활성 셀러"}
               </p>

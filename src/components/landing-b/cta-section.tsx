@@ -1,30 +1,30 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
-import { useWaitlist } from "./waitlist-context"
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { useWaitlist } from "./waitlist-context";
 
 export function CtaSection() {
-  const ref = useRef<HTMLDivElement>(null)
-  const [inView, setInView] = useState(false)
-  const { open } = useWaitlist()
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  const { open } = useWaitlist();
 
   useEffect(() => {
-    const el = ref.current
-    if (!el) return
+    const el = ref.current;
+    if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setInView(true)
-          observer.unobserve(el)
+          setInView(true);
+          observer.unobserve(el);
         }
       },
-      { threshold: 0.2 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
+      { threshold: 0.2 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section ref={ref} className="relative overflow-hidden py-24 lg:py-32">
@@ -47,6 +47,7 @@ export function CtaSection() {
         </h2>
         <p className="mt-6 text-pretty text-lg leading-relaxed text-white/60">
           반복적인 업무에서 벗어나 진짜 중요한 일에 집중하세요.
+          <br />
           Leviosa AI가 당신의 성장 파트너가 되겠습니다.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -68,5 +69,5 @@ export function CtaSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
